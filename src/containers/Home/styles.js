@@ -746,7 +746,7 @@ export const ProjectsArea = styled(motion.div)`
     }
 `;
 export const Projects = styled.div`
-    margin-top: 100px;
+    margin-top: 300px;
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, 1fr));
     gap: 100px;
