@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import showInfo from '../../components/infoVideos.js';
 import validator from 'validator';
 
-import { easeIn, easeInOut, motion, scale } from 'motion/react';
+import { motion } from 'framer-motion';
 
 import logo from '../../assets/logo.png';
 import avatar from '../../assets/avatar.png';
