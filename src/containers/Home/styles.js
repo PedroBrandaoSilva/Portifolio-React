@@ -5,7 +5,7 @@ import breakpoints from '../../styles/BreakPoints';
 
 export const Container = styled.div`
     width: 100vw;
-
+    
     
     
     
@@ -261,6 +261,10 @@ export const Link = styled.a`
     }
 `;
 
+export const AnimationContainer = styled.div`
+    overflow-x: hidden;
+`;
+
 export const Apresentation = styled.div`
     display: flex;
     align-items: center;
@@ -270,7 +274,8 @@ export const Apresentation = styled.div`
     text-align: center;
     margin-top: 10%;
     position: relative;
-
+    
+    
 
     @media (${breakpoints.sl1}){
         gap: 2%;
@@ -347,6 +352,7 @@ export const FirstText = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 
 
     @media (${breakpoints.ss1}){
@@ -366,7 +372,7 @@ export const FirstText = styled.div`
 export const Name = styled.div`
     line-height: 40px;
     opacity: ${(props) => (props.$visible ? '1' : '0')};
-    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(-300px)')} ;
+    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(100%)')} ;
     transition: all 1s ease;
     transition-delay: 0.4s;
 
@@ -413,7 +419,7 @@ export const LinkArea = styled.div`
     font-size: 18px;
     font-weight: 400;
     opacity: ${(props) => (props.$visible ? '1' : '0')};
-    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(-300px)')} ;
+    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(100%)')} ;
     transition: all 1s ease;
     transition-delay: 0.2s;
 
@@ -432,7 +438,7 @@ export const LinkArea = styled.div`
 export const Avatar = styled.div`
     display: flex;
     opacity: ${(props) => (props.$visible ? '1' : '0')};
-    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(300px)')} ;
+    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(100%)')} ;
     transition: all 1s ease;
 
     
@@ -469,9 +475,9 @@ export const About = styled.div`
     margin-top: 300px;
     width: 100%;
     opacity: ${(props) => (props.$visible ? '1' : '0')};
-    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(300px)')} ;
+    transform: ${(props) => (props.$visible ? 'translateX(0)' : 'translateX(50%)')} ;
     transition: all 1s ease;
-
+   
 
     @media (${breakpoints.sm2}){
         margin-top: 200px;
@@ -599,16 +605,23 @@ export const SkillsArea = styled.div`
     @media (${breakpoints.sm1}){
        width: 90% ;
     }
-    @media (${breakpoints.ss2}){
-        border: 2px solid #FF6600;
-        border-radius: 80px;
-        gap: 0;
-    }
+
     @media (${breakpoints.ss3}){
         border: 2px solid #FF6600;
         border-radius: 80px;
         gap: 0;
     }
+    @media (${breakpoints.ss2}){
+        border: 2px solid #FF6600;
+        border-radius: 80px;
+        gap: 0;
+    }
+    @media (${breakpoints.ss1}){
+        border: 1px solid #FF6600;
+        border-radius: 60px;
+        gap: 0;
+    }
+    
 
     
 
@@ -650,6 +663,10 @@ export const Skills = styled(motion.div)`
 
         @media (${breakpoints.ss2}){
             width: 60px;
+        
+        }
+        @media (${breakpoints.ss1}){
+            width: 40px;
         
         }
 
@@ -815,6 +832,9 @@ export const Projects = styled.div`
                 height: auto;
                 border: 1px solid #FF6600;
             }
+            @media (${breakpoints.ss1}){
+                width: 200px;
+            }
         }    
         
 
@@ -883,6 +903,10 @@ export const ContactArea = styled(motion.div)`
     background: #FF6600 ;
   }
 
+
+  @media (${breakpoints.ss1}){
+        margin-top: 150px;
+   }
   
 `;
 

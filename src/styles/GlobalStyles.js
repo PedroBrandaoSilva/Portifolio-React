@@ -8,18 +8,19 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Fira Code", sans-serif;
         color: #fff;
         
+        
     }
 
     body{
-        width: 100vw;
+        width: 100%;
         background-color:#0c0c0c;
-        overflow-x: hidden;
+        
     }
 
     html{
         scroll-behavior: smooth;
-    }
-
+        
+    } 
     video{
         max-width: 500px;
         border-radius: 50px;

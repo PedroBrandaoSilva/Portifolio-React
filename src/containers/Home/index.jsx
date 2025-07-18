@@ -40,6 +40,7 @@ import {
 	Apresentation,
 	ButtonUp,
 	MobileSideBar,
+	AnimationContainer,
 } from './styles';
 
 function Home() {
@@ -111,8 +112,12 @@ function Home() {
 				setXOffset(-1400);
 			} else if (windowWidth >= 400) {
 				setXOffset(-1300);
+			} else if (windowWidth >= 300) {
+				setXOffset(-800);
+			} else if (windowWidth >= 200) {
+				setXOffset(-600);
 			} else {
-				setXOffset(-1100); // ou o valor que quiser para <400px
+				setXOffset(-500);
 			}
 		};
 
@@ -194,96 +199,112 @@ function Home() {
 					</button>
 				</MobileSideBar>
 			</Header>
+			<AnimationContainer>
+				<Apresentation className="apresentation">
+					<FirstText>
+						<Name ref={refApresentation} $visible={apresentationOn}>
+							<Title>PEDRO BRANDÃO</Title>
+							<p>DESENVOLVEDOR FULL-STACK</p>
+						</Name>
 
-			<Apresentation className="apresentation">
-				<FirstText>
-					<Name ref={refApresentation} $visible={apresentationOn}>
-						<Title>PEDRO BRANDÃO</Title>
-						<p>DESENVOLVEDOR FULL-STACK</p>
-					</Name>
+						<LinkArea ref={refApresentation} $visible={apresentationOn}>
+							<Link onClick={openDocument}>Ver Currículo</Link>
+							<Link href="#skills">Habilidades</Link>
+						</LinkArea>
+					</FirstText>
+					<Avatar ref={refApresentation} $visible={apresentationOn}>
+						<img src={avatar} alt="Imagem do propietário"></img>
+					</Avatar>
+					<motion.hr
+						className="line-one"
+						initial={{ opacity: 0, scale: 0.4 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 2 }}
+						viewport={{ once: true }}
+					/>
+					<motion.hr
+						className="line-two"
+						initial={{ opacity: 0, scale: 0.4 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 2 }}
+						viewport={{ once: true }}
+					/>
+				</Apresentation>
 
-					<LinkArea ref={refApresentation} $visible={apresentationOn}>
-						<Link onClick={openDocument}>Ver Currículo</Link>
-						<Link href="#skills">Habilidades</Link>
-					</LinkArea>
-				</FirstText>
-				<Avatar ref={refApresentation} $visible={apresentationOn}>
-					<img src={avatar} alt="Imagem do propietário"></img>
-				</Avatar>
-				<motion.hr
-					className="line-one"
-					initial={{ opacity: 0, scale: 0.4 }}
-					whileInView={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 2 }}
-					viewport={{ once: true }}
-				/>
-				<motion.hr
-					className="line-two"
-					initial={{ opacity: 0, scale: 0.4 }}
-					whileInView={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 2 }}
-					viewport={{ once: true }}
-				/>
-			</Apresentation>
+				<About ref={refAbout} $visible={aboutOn}>
+					<Category id="aboutMe">Sobre mim</Category>
+					<hr />
+					<p>
+						Estou em transição de carreira para a área de Desenvolvimento Web e,
+						há mais de dois anos, venho me dedicando intensamente aos estudos e
+						à prática da programação. Durante esse período, tenho aplicado os
+						conhecimentos adquiridos para desenvolver projetos próprios e também
+						soluções para terceiros. Utilizo as tecnologias mais atuais do
+						mercado, incluindo bibliotecas e frameworks modernos, com foco na
+						criação de interfaces funcionais, responsivas e com boa experiência
+						do usuário. Meu objetivo é evoluir continuamente como desenvolvedor,
+						e poder contribuir ao máximo em projetos futuros, sempre buscando o
+						aprendizado.
+					</p>
+				</About>
 
-			<About ref={refAbout} $visible={aboutOn}>
-				<Category id="aboutMe">Sobre mim</Category>
-				<hr />
-				<p>
-					Estou em transição de carreira para a área de Desenvolvimento Web e,
-					há mais de dois anos, venho me dedicando intensamente aos estudos e à
-					prática da programação. Durante esse período, tenho aplicado os
-					conhecimentos adquiridos para desenvolver projetos próprios e também
-					soluções para terceiros. Utilizo as tecnologias mais atuais do
-					mercado, incluindo bibliotecas e frameworks modernos, com foco na
-					criação de interfaces funcionais, responsivas e com boa experiência do
-					usuário. Meu objetivo é evoluir continuamente como desenvolvedor, e
-					poder contribuir ao máximo em projetos futuros, sempre buscando o
-					aprendizado.
-				</p>
-			</About>
-
-			<SkillsArea ref={refSkills} $visible={skillsOn}>
-				<Category id="skills">Habilidades</Category>
-				<Carousel>
-					<Skills
-						key={xOffset}
-						initial={{ x: 0 }}
-						animate={
-							skillsOn
-								? {
-										x: xOffset,
-										transition: {
-											duration: 5,
-											repeat: Infinity,
-											repeatType: 'reverse',
-											ease: easeInOut,
-										},
-									}
-								: {}
-						}
-						ref={refSkills}
-						$visible={skillsOn}
-					>
-						<img className=" img" src={skillIcons[0]} alt="skills"></img>
-						<img className=" img" src={skillIcons[1]} alt="skills"></img>
-						<img className=" img" src={skillIcons[2]} alt="skills"></img>
-						<img className=" img" src={skillIcons[3]} alt="skills"></img>
-						<img className=" img" src={skillIcons[4]} alt="skills"></img>
-						<img className=" img" src={skillIcons[5]} alt="skills"></img>
-						<img className=" img" src={skillIcons[6]} alt="skills"></img>
-						<img className=" img" src={skillIcons[7]} alt="skills"></img>
-						<img className=" img" src={skillIcons[8]} alt="skills"></img>
-						<img className=" img" src={skillIcons[9]} alt="skills"></img>
-						<img className=" img" src={skillIcons[10]} alt="skills"></img>
-						<img className="hidden img" src={skillIcons[11]} alt="skills"></img>
-						<img className="hidden img" src={skillIcons[12]} alt="skills"></img>
-						<img className="hidden img" src={skillIcons[13]} alt="skills"></img>
-						<img className="hidden img" src={skillIcons[14]} alt="skills"></img>
-					</Skills>
-				</Carousel>
-			</SkillsArea>
-
+				<SkillsArea ref={refSkills} $visible={skillsOn}>
+					<Category id="skills">Habilidades</Category>
+					<Carousel>
+						<Skills
+							key={xOffset}
+							initial={{ x: 0 }}
+							animate={
+								skillsOn
+									? {
+											x: xOffset,
+											transition: {
+												duration: 5,
+												repeat: Infinity,
+												repeatType: 'reverse',
+												ease: easeInOut,
+											},
+										}
+									: {}
+							}
+							ref={refSkills}
+							$visible={skillsOn}
+						>
+							<img className=" img" src={skillIcons[0]} alt="skills"></img>
+							<img className=" img" src={skillIcons[1]} alt="skills"></img>
+							<img className=" img" src={skillIcons[2]} alt="skills"></img>
+							<img className=" img" src={skillIcons[3]} alt="skills"></img>
+							<img className=" img" src={skillIcons[4]} alt="skills"></img>
+							<img className=" img" src={skillIcons[5]} alt="skills"></img>
+							<img className=" img" src={skillIcons[6]} alt="skills"></img>
+							<img className=" img" src={skillIcons[7]} alt="skills"></img>
+							<img className=" img" src={skillIcons[8]} alt="skills"></img>
+							<img className=" img" src={skillIcons[9]} alt="skills"></img>
+							<img className=" img" src={skillIcons[10]} alt="skills"></img>
+							<img
+								className="hidden img"
+								src={skillIcons[11]}
+								alt="skills"
+							></img>
+							<img
+								className="hidden img"
+								src={skillIcons[12]}
+								alt="skills"
+							></img>
+							<img
+								className="hidden img"
+								src={skillIcons[13]}
+								alt="skills"
+							></img>
+							<img
+								className="hidden img"
+								src={skillIcons[14]}
+								alt="skills"
+							></img>
+						</Skills>
+					</Carousel>
+				</SkillsArea>
+			</AnimationContainer>
 			<ProjectsArea
 				initial={{ opacity: 0, y: 90, scale: 0.8 }}
 				whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -295,7 +316,7 @@ function Home() {
 
 				<Projects>
 					<motion.div
-						initial={{ opacity: 0, x: -200 }}
+						initial={{ opacity: 0, y: -200 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.2 }}
@@ -330,7 +351,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, x: 200 }}
+						initial={{ opacity: 0, y: -200 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, delay: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
@@ -365,7 +386,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, x: -200 }}
+						initial={{ opacity: 0, y: -200 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
@@ -400,7 +421,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, x: 200 }}
+						initial={{ opacity: 0, y: -200 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, delay: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
@@ -429,7 +450,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, x: -200 }}
+						initial={{ opacity: 0, y: -200 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
