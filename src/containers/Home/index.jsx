@@ -316,7 +316,7 @@ function Home() {
 
 				<Projects>
 					<motion.div
-						initial={{ opacity: 0, y: -200 }}
+						initial={{ opacity: 0, y: -400 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.2 }}
@@ -351,7 +351,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, y: -200 }}
+						initial={{ opacity: 0, y: -400 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, delay: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
@@ -386,7 +386,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, y: -200 }}
+						initial={{ opacity: 0, y: -400 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
@@ -421,7 +421,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, y: -200 }}
+						initial={{ opacity: 0, y: -400 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, delay: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
@@ -450,7 +450,7 @@ function Home() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, y: -200 }}
+						initial={{ opacity: 0, y: -400 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.2, ease: easeIn }}
 						viewport={{ once: true, amount: 0.5 }}
