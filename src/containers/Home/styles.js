@@ -789,7 +789,7 @@ export const Projects = styled.div`
             
         }
         @media (${breakpoints.sl1}){
-           
+           margin-top: 100px;
         }
         
         
@@ -821,6 +821,7 @@ export const Projects = styled.div`
 
             @media (${breakpoints.sl1}){
                 width: 100%;
+                
             }
             @media (${breakpoints.sm3}){
                 min-width: 100%;
