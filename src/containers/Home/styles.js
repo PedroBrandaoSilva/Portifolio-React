@@ -158,7 +158,13 @@ export const MobileSideBar = styled.div`
         }
 
 
-
+        @media (${breakpoints.ss2}){
+            max-height: 30vh;
+            padding: 20px;
+            
+        
+        
+        }
         
     
 
@@ -734,7 +740,7 @@ export const ProjectsArea = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     margin-top: 200px;
-    gap: 30px;
+    
     
 
     hr{
@@ -747,7 +753,7 @@ export const ProjectsArea = styled(motion.div)`
     }
 `;
 export const Projects = styled.div`
-    margin-top: 300px;
+    margin-top: 500px;
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, 1fr));
     gap: 100px;
@@ -811,6 +817,9 @@ export const Projects = styled.div`
         
 
         video{
+
+            
+
             @media (${breakpoints.sl3}){
                 width: 450px;
             }
