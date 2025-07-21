@@ -734,6 +734,7 @@ export const ProjectsArea = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     margin-top: 200px;
+    gap: 30px;
     
 
     hr{
