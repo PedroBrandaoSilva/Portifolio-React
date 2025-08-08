@@ -900,7 +900,7 @@ export const ProjectTitle = styled.h2`
 export const ContactArea = styled(motion.div)`
   width: 100%;
   margin-top: 300px;
-  background-color:#0f0f0f;
+  background-color:#131212ff;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -987,7 +987,7 @@ export const Form = styled(motion.form)`
 `;
 export const Footer = styled.footer`
     width: 100%;
-    background: #0f0f0f;
+    background: #131212ff;
 
     div{
         display: flex;
