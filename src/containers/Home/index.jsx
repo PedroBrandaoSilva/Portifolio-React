@@ -111,11 +111,11 @@ function Home() {
 			} else if (windowWidth >= 660) {
 				setXOffset(-1400);
 			} else if (windowWidth >= 400) {
-				setXOffset(-1300);
+				setXOffset(-1400);
 			} else if (windowWidth >= 300) {
-				setXOffset(-800);
+				setXOffset(-1000);
 			} else if (windowWidth >= 200) {
-				setXOffset(-600);
+				setXOffset(-800);
 			} else {
 				setXOffset(-500);
 			}
